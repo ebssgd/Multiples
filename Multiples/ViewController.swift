@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var numstart = 0
     var mult = 0
     var sum = 0
-    let final = 50
+    let final = 100
     
     @IBAction func onPlayBtnPress() {
         if whatMult.text != nil && whatMult.text != "" {
@@ -41,6 +41,8 @@ class ViewController: UIViewController {
         showMath.text = "\(numstart) + \(mult) = \(sum)"
         numstart = sum
         updatesum()
+        GameOver()
+    
         
     }
 
@@ -49,7 +51,7 @@ class ViewController: UIViewController {
     }
     
     func GameOver() {
-        if sum >= final {
+        if sum > final {
             resetGame()
         }
     }
