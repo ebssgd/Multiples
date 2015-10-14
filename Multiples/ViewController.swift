@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     var numstart = 0
     var mult = 0
+    var sum = 0
     let final = 50
     
     @IBAction func onPlayBtnPress() {
@@ -31,13 +32,39 @@ class ViewController: UIViewController {
             
             mult = Int(whatMult.text!)!
             numstart = 0
+            updatesum()
+            
         }
     }
     
     @IBAction func onAddBtnPress() {
+        showMath.text = "\(numstart) + \(mult) = \(sum)"
+        numstart = sum
+        updatesum()
         
     }
 
-
+    func updatesum() {
+        sum = numstart + mult
+    }
+    
+    func GameOver() {
+        if sum >= final {
+            resetGame()
+        }
+    }
+    
+    func resetGame() {
+        playBtn.hidden = false
+        logo.hidden = false
+        whatMult.hidden = false
+        addBtn.hidden = true
+        showMath.hidden = true
+        
+        numstart = 0
+        sum = 0
+        
+        showMath.text = "Press Add to add!!"
+    }
 }
 
