@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MULTIPLES" translatesAutoresizingMaskIntoConstraints="NO" id="RDq-lp-E8h">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MULTIPLES" translatesAutoresizingMaskIntoConstraints="NO" id="RDq-lp-E8h" userLabel="MULTIPLES-logo">
                                 <rect key="frame" x="105" y="20" width="390" height="91"/>
                                 <animations/>
                                 <constraints>
@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" constant="390" id="XKb-99-hu8"/>
                                 </constraints>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ek1-cC-jdk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ek1-cC-jdk" userLabel="playbtn">
                                 <rect key="frame" x="193" y="404" width="214" height="176"/>
                                 <animations/>
                                 <constraints>
@@ -36,18 +36,21 @@
                                     <constraint firstAttribute="height" constant="176" id="f6l-Xm-Aqn"/>
                                 </constraints>
                                 <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="onPlayBtnPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="s9M-Ak-BK2"/>
+                                </connections>
                             </button>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What Multiple To Add?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3eo-Ud-TpB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What Multiple To Add?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3eo-Ud-TpB">
                                 <rect key="frame" x="188" y="346" width="219" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="219" id="RTs-a3-wvr"/>
                                     <constraint firstAttribute="height" constant="45" id="yHp-LT-dcm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIx-6V-jsT">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIx-6V-jsT" userLabel="addbtn">
                                 <rect key="frame" x="165" y="411" width="265" height="101"/>
                                 <animations/>
                                 <constraints>
@@ -56,7 +59,7 @@
                                 </constraints>
                                 <state key="normal" image="add"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Add to add!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igb-eE-mVi">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Add to add!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igb-eE-mVi">
                                 <rect key="frame" x="191" y="150" width="219" height="63"/>
                                 <animations/>
                                 <constraints>
@@ -87,6 +90,13 @@
                             <constraint firstItem="igb-eE-mVi" firstAttribute="top" secondItem="RDq-lp-E8h" secondAttribute="bottom" constant="39" id="o5R-3e-ghN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addBtn" destination="KIx-6V-jsT" id="h19-ET-Kg1"/>
+                        <outlet property="logo" destination="RDq-lp-E8h" id="P68-fq-9eG"/>
+                        <outlet property="playBtn" destination="Ek1-cC-jdk" id="j6d-Rs-n6S"/>
+                        <outlet property="showMath" destination="igb-eE-mVi" id="Rz8-og-kPt"/>
+                        <outlet property="whatMult" destination="3eo-Ud-TpB" id="2fy-Ju-Okc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

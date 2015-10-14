@@ -10,14 +10,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBOutlet weak var playBtn: UIButton!
+    @IBOutlet weak var addBtn: UIButton!
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var whatMult: UITextField!
+    @IBOutlet weak var showMath: UILabel!
+    
+    var numstart = 0
+    var mult = 0
+    let final = 50
+    
+    @IBAction func onPlayBtnPress() {
+        if whatMult.text != nil && whatMult.text != "" {
+            playBtn.hidden = true
+            logo.hidden = true
+            whatMult.hidden = true
+            addBtn.hidden = false
+            showMath.hidden = false
+            
+            mult = Int(whatMult.text!)!
+            numstart = 0
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func onAddBtnPress() {
+        
     }
 
 
