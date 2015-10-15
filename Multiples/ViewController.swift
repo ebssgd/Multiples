@@ -66,6 +66,7 @@ class ViewController: UIViewController {
         numstart = 0
         sum = 0
         
+        whatMult.text = ""
         showMath.text = "Press Add to add!!"
     }
 }
